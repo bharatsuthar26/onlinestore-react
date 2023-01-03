@@ -45,6 +45,9 @@ function getProductById(id) {
 function deleteProduct(id) {
   return axios.delete(`${apiURL}products/${id}`);
 }
+function updateData(id, data) {
+  return axios.put(`${apiURL}products/${id}`, data);
+}
 export {
   postLogin,
   postRegis,
@@ -57,4 +60,5 @@ export {
   getProducts,
   getProductById,
   deleteProduct,
+  updateData,
 };

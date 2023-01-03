@@ -40,16 +40,10 @@ function Header() {
                     </Nav.Link>
                   </>
                 )}
-                <Nav.Link
-                  eventKey={2}
-                  to="/cart"
-                  onClick={() => navigate("/cart")}
-                >
+                <Nav.Link to="/cart" onClick={() => navigate("/cart")}>
                   Cart
                 </Nav.Link>
-                <Nav.Link eventKey={2} onClick={() => doLogout()}>
-                  Logout
-                </Nav.Link>
+                <Nav.Link onClick={() => doLogout()}>Logout</Nav.Link>
               </>
             )}
           </Nav>

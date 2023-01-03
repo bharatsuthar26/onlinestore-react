@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function ProductList({ prodata, deletePro }) {
   return (
     <Card style={{ width: "18rem", height: "21rem", marginBottom: "2rem" }}>
-      <Link to={`/getproductbyid/${prodata._id}`}>
+      <Link to={`/viewproduct/${prodata._id}`}>
         <Card.Img
           variant="top"
           style={{ width: "18rem", height: "12rem" }}
@@ -16,7 +16,7 @@ function ProductList({ prodata, deletePro }) {
       </Link>
       <Card.Body>
         <Link
-          to={`/getproductbyid/${prodata._id}`}
+          to={`/viewproduct/${prodata._id}`}
           style={{ textDecoration: "none" }}
         >
           <Card.Title>{prodata.name}</Card.Title>
@@ -26,7 +26,7 @@ function ProductList({ prodata, deletePro }) {
 
         {isLoggedIn() && (
           <>
-            <Button variant="primary">Add to Cart</Button>
+            <Button variant="dark">Add to Cart</Button>
           </>
         )}
         {isAdmin() && (
@@ -36,7 +36,7 @@ function ProductList({ prodata, deletePro }) {
             </Link>
 
             <Button
-              className="mx-1"
+              className="mx-1 btn btn-danger"
               varient="danger"
               onClick={() => deletePro(prodata._id)}
             >

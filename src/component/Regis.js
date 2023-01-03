@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+const Swal = require("sweetalert2");
 
 function Regis() {
   const ValidationSchema = Yup.object().shape({
@@ -38,6 +39,12 @@ function Regis() {
     validationSchema: ValidationSchema,
     onSubmit: (data) => {
       console.log(data);
+      Swal.fire({
+        title: "Success",
+        text: "Registered Successfully",
+        icon: "success",
+        confirmButtonText: "Ok",
+      });
     },
   });
 
